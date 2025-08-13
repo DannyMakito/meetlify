@@ -3,7 +3,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+@layer utilities{
+  .flex-center{
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between{
+    @apply flex justify-between items-center;
+  }
+}
+
 @theme inline {
+  --background-image-hero: url('/images/hero-background.png');
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -41,6 +53,17 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-dark-1: #1C1F2E;
+  --color-dark-2: #161925;
+  --color-dark-3: #252A41;
+  --color-dark-4: #1E2757;
+  --color-blue-1: #0E78F9;
+  --color-sky-1: #C9DDFF;
+  --color-sky-2: #ECF0FF;
+  --color-sky-3: #F5FCFF;
+  --color-orange-1: #FF742E;
+  --color-purple-1: #830EF9;
+  --color-yellow-1: #F9A90E;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -93,20 +116,7 @@ body {
   --dark-3: #252A41;
   --dark-4: #1E2757;
   /* Blue colors */
-  --blue-1: #0E78F9;
-  /* Sky colors */
-  --sky-1: #C9DDFF;
-  --sky-2: #ECF0FF;
-  --sky-3: #F5FCFF;
 
-  /* Orange colors */
-  --orange-1: #FF742E;
-
-  /* Purple colors */
-  --purple-1: #830EF9;
-
-  /* Yellow colors */
-  --yellow-1: #F9A90E;
 }
 
 .dark {
@@ -154,3 +164,116 @@ body {
 
   
 }
+
+.bg-hero {
+  background-image: var(--background-image-hero);
+  background-size: cover;
+  background-position: center;
+}
+
+/* ======== stream css overrides ======== */
+.str-video__call-stats {
+  max-width: 500px;
+  position: relative;
+}
+
+.str-video__speaker-layout__wrapper {
+  max-height: 700px;
+}
+
+.str-video__participant-details {
+  color: white;
+}
+
+.str-video__menu-container {
+  color: white;
+}
+
+.str-video__notification {
+  color: white;
+}
+
+.str-video__participant-list {
+  background-color: #1c1f2e;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  height: 100%;
+}
+
+.str-video__call-controls__button {
+  height: 40px;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.glassmorphism2 {
+  background: rgba(18, 17, 17, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ==== clerk class override ===== */
+
+.cl-providerIcon__github{
+  filter: invert(1);
+}
+.cl-userButtonPopoverActionButtonIcon {
+  color: white;
+}
+
+.cl-logoBox {
+  height: 40px;
+}
+.cl-dividerLine {
+  background: #252a41;
+  height: 2px;
+}
+
+.cl-socialButtonsIconButton {
+  border: 3px solid #565761;
+}
+
+.cl-internal-wkkub3 {
+  color: white;
+}
+.cl-userButtonPopoverActionButton {
+  color: white;
+}
+
+/* =============================== */
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+}
+
+/* animation */
+
+.show-block {
+  width: 100%;
+  max-width: 350px;
+  display: block;
+  animation: show 0.7s forwards linear;
+}
+
+@keyframes show {
+  0% {
+    animation-timing-function: ease-in;
+    width: 0%;
+  }
+
+  100% {
+    animation-timing-function: ease-in;
+    width: 100%;
+  }
+}
+

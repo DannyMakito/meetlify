@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 import React,{ReactNode}from 'react'
 
@@ -7,7 +8,7 @@ const HomeLayout= ({ children }:  { children: ReactNode }) => {
     Navbar
      <div className="flex">
         <Sidebar />
-
+        <Navbar/>
         <section className="flex min-h-screen  flex-1 flex-col pb-6 pt-28 max-md:pd-14 sm:px-14">
             <div className="w-full">
 
